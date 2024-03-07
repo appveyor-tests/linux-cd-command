@@ -1,0 +1,18 @@
+init:
+ - appveyor version
+ - ps: Update-AppveyorBuild -Message "Image '$env:APPVEYOR_BUILD_WORKER_IMAGE'@'$env:APPVEYOR_BUILD_WORKER_CLOUD' cloud. $env:APPVEYOR_REPO_COMMIT_MESSAGE"
+ - sh: echo $APPVEYOR_BUILD_WORKER_IMAGE
+ - sh: echo $APPVEYOR_BUILD_WORKER_CLOUD
+
+build_script:
+- sh: |
+    set -e
+
+    echo "Calling 'lsb_release -a'"
+    lsb_release -a
+
+    echo "Calling 'cd'"
+    cd
+    echo "last exit code: $?"
+
+    echo "Working in $(pwd)"
