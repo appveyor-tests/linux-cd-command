@@ -6,7 +6,7 @@ init:
 
 build_script:
 - sh: |
-    # set -e
+    set -e
 
     echo "Calling 'lsb_release -a'"
     lsb_release -a
