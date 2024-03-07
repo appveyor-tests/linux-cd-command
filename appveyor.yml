@@ -5,6 +5,8 @@ init:
  - sh: echo $APPVEYOR_BUILD_WORKER_CLOUD
 
 build_script:
+- sh: alias cd
+- sh: type cd
 - sh: |
     set -e
 
